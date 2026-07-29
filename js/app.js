@@ -1,8 +1,9 @@
-    let totalGeral;
-    limpar();
+    let totalGeral = 0;
+    document.getElementById('lista-produtos').innerHTML = '';
+    document.getElementById('valor-total').textContent = 'R$0';
+    
 
 function adicionar() {
-
     //recuperar valores nome do produto, quantidade e valor
     let produto = document.getElementById('produto').value;    
     let nomeProduto = produto.split('-')[0];
@@ -19,23 +20,21 @@ function adicionar() {
         </section>`; 
     } else {
         alert(`o campo de quantidade não pode ser vazio!`);
-    }    
-           
+    }               
     //atualizar o valor total
     totalGeral = totalGeral + preco;
     let campoTotal = document.getElementById('valor-total');
     campoTotal.textContent = `R$ ${totalGeral}`;
-    document.getElementById('quantidade').value = '';  
-    
+    document.getElementById('quantidade').value = '';      
 }
 
-function limpar(params) {
-    if (totalGeral > 0) {
-        confirm('Deseja realmente apagar todos os campos!');
+function limpar(params) {     
+    let resposta =  confirm('Deseja realmente apagar todos os campos!');      
+        
+    if (resposta == true) {
+        totalGeral = 0;
+        document.getElementById('lista-produtos').innerHTML = '';
+        document.getElementById('valor-total').textContent = 'R$0';
     }
-    
-    totalGeral = 0;
-    document.getElementById('lista-produtos').innerHTML = '';
-    document.getElementById('valor-total').textContent = 'R$0';
 }
 
