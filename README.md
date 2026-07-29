@@ -70,21 +70,6 @@ Durante o desenvolvimento deste projeto foram praticados:
 * Organização de funções;
 * Cálculo de valores e controle de estado do carrinho.
 
-## 📸 Demonstração
-
-Adicione aqui um GIF ou captura de tela da aplicação.
-
-Exemplo:
-
-```
-assets/demo.gif
-```
-
-ou
-
-```
-assets/screenshot.png
-```
 
 ## 📚 Aprendizados
 
