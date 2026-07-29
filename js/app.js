@@ -1,4 +1,4 @@
-    let totalGeral = 0;
+    let totalGeral;
     limpar();
 
 function adicionar() {
@@ -12,21 +12,30 @@ function adicionar() {
     let preco = quantidade * valorUnitario;
     let carrinho = document.getElementById('lista-produtos');    
     //adicionar no carrinho
-    carrinho.innerHTML = carrinho.innerHTML + 
+    if (quantidade >= 1) {         
+        carrinho.innerHTML = carrinho.innerHTML + 
         `<section class="carrinho__produtos__produto">
             <span class="texto-azul">${quantidade}x</span> ${nomeProduto} <span class="texto-azul">R$${preco}</span>
-        </section>`;        
+        </section>`; 
+    } else {
+        alert(`o campo de quantidade não pode ser vazio!`);
+    }    
+           
     //atualizar o valor total
     totalGeral = totalGeral + preco;
     let campoTotal = document.getElementById('valor-total');
     campoTotal.textContent = `R$ ${totalGeral}`;
-    document.getElementById('quantidade').value = 0;
+    document.getElementById('quantidade').value = '';  
     
 }
 
 function limpar(params) {
+    if (totalGeral > 0) {
+        confirm('Deseja realmente apagar todos os campos!');
+    }
+    
     totalGeral = 0;
     document.getElementById('lista-produtos').innerHTML = '';
-    document.getElementById('valor-total').textContent = 'R$ 0';
+    document.getElementById('valor-total').textContent = 'R$0';
 }
 
