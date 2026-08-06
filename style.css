@@ -75,7 +75,7 @@ input[type="number"] {
   font-style: normal;
   font-weight: 700;
   line-height: 100%;
-  margin-bottom: 2.5rem;
+  margin-bottom: 2.2rem;
 }
 
 .texto-azul {
@@ -90,23 +90,26 @@ input[type="number"] {
 }
 
 .formulario .campo-grupo {
+  width:100%;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: 1rem;
 }
 
-.produto-input {
-  width: 24.75rem;
+.produto-input,
+.quantidade-input {
+  width:24.75rem;
   height: 3.5rem;
   padding: 1rem;
   border-radius: 0.5rem;
   border: 1px solid var(--Light-Blue, #1875E8);
+  text-align:center;
 
   color: var(--Void, #01080E);
   font-family: Inter;
   font-size: 1.3125rem;
-  font-style: italic;
+  font-style: normal;
   font-weight: 400;
   line-height: 110%;
   
@@ -126,9 +129,14 @@ input[type="number"] {
 }
 
 .formulario > .parte-inferior {
-  display: flex;
-  align-items: flex-end;
-  gap: 2rem;
+  flex-direction:column;
+    align-items:stretch;
+}
+
+.parte-inferior {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
 .quantidade-input {
@@ -144,13 +152,15 @@ input[type="number"] {
   font-size: 1.3125rem;
   font-style: italic;
   font-weight: 400;
-  line-height: 110%;
+  line-height: 110%;  
 }
 
 .botoes-wrapper {
-  display: flex;
-  align-items: flex-end;
-  gap: 1rem;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: stretch;
+    gap: 20px; /* espaço entre os botões */
 }
 
 .botao-form {
@@ -158,7 +168,7 @@ input[type="number"] {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 13rem;
+  width:100%;
   height: 3.25rem;
   padding: 1rem 1.5rem;
   gap: 0.625rem;
@@ -189,7 +199,8 @@ input[type="number"] {
 
 .carrinho {
   display: flex;
-  width: 24rem;
+  width:100%;
+  max-width:24rem;
   flex-direction: column;
   align-items: flex-start;
   gap: 2rem;
@@ -218,6 +229,10 @@ input[type="number"] {
 }
 
 .carrinho__produtos__produto {
+  width:100%;
+  padding:12px;
+  border-radius:10px;
+  background:#F4F8FF;
   font-size: 1.3125rem;
   font-style: italic;
   font-weight: 400;
@@ -225,17 +240,134 @@ input[type="number"] {
 }
 
 .divisoria {
-  width: 24rem;
+  width:100%;
   height: 0.0625rem;
   background: #000;
 }
 
 .carrinho__total {
-  font-size: 2.25rem;
+  font-size:1.8rem;
   font-weight: 700;
   line-height: 110%; /* 2.475rem */
 }
 
+.carrinho>img{
+
+    width:140px;
+    align-self:center;
+}
+
 .adicionar-produto {
   padding-bottom: 180px;
+}
+
+/* ===========================
+   TABLETS
+=========================== */
+
+@media (max-width: 1024px) {
+
+    body{
+        padding:30px;
+    }
+
+    .conteudo-principal{
+        grid-template-columns:1fr;
+        gap:40px;
+        padding:40px;
+        background-position:left bottom;
+        background-size:250px;
+    }
+
+    .carrinho{
+        width:100%;
+    }
+
+}
+
+/* ===========================
+   CELULARES
+=========================== */
+
+@media (max-width:768px){
+
+    body{
+        padding:15px;
+        background:#fff;
+    }
+
+    .conteudo-principal{
+        grid-template-columns:1fr;
+        padding:20px;
+        gap:35px;
+        background-image:none;
+        padding-bottom:30px;
+    }
+
+    .grafismo-azul{
+        display:none;
+    }
+
+    .titulo{
+
+        font-size:2.5rem;
+        text-align:center;
+    }
+
+    .produto-input{
+    text-align:left;
+  }
+
+    .quantidade-input{
+        text-align:center;
+    }
+
+    .produto-input,
+    .quantidade-input{
+        width:100%;
+    }
+    
+    .carrinho{
+    padding:20px;
+    border-radius:18px;
+    background:#FAFCFF;
+    border:1px solid #E6EEF9;
+  }
+
+  .carrinho__total{
+    margin-top:15px;
+    padding-top:15px;
+    border-top:2px solid #EAEAEA;
+  }
+
+  .carrinho>img{
+    width:100px;
+    opacity:.25;
+    margin-bottom:-10px;
+  }
+
+  .formulario{
+    width:100%;
+    max-width:420px;
+  }
+
+  .adicionar-produto{
+    padding-bottom:0px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+  }
+
+  .botao-form{
+    transition:.25s;
+  }
+
+  .botao-form:hover{
+      transform:translateY(-2px);
+  }
+
+  .botao-form:active{
+      transform:scale(.98);
+  }
+
 }
