@@ -25,12 +25,22 @@
       <form class="formulario">
         <label class="campo-grupo">
           <span class="texto-medio-azul">Produto</span>
-          <select class="produto-input" name="produto" id="produto">
-            <option value="Fone de ouvido - R$100">Fone de ouvido - R$100</option>
-            <option value="Celular - R$1400">Celular - R$1400</option>
-            <option value="Oculus VR - R$5000">Oculus VR - R$5000</option>
-          </select>
-          </div>
+          <input
+            class="produto-input"
+            id="produto"
+            type="text"
+            placeholder="Ex.: Arroz">
+        </label>
+
+        <label class="campo-grupo">
+          <span class="texto-medio-azul">Preço (R$)</span>
+          <input
+            class="quantidade-input"
+            id="preco"
+            type="number"
+            step="0.01"
+            min="0"
+            placeholder="0,00">
         </label>
 
         <section class="parte-inferior">
